@@ -4,60 +4,32 @@ using UnityEngine;
 
 public class CameraFolow : MonoBehaviour
 {
-    
-    public int CameraPosition;
+
     public Transform Target;
-    [Header("Cam0")]
-    public Vector3 Position0 = new Vector3(0, 3, -4);
-    public Vector3 Rotation0 = new Vector3(12, 0, 0);
-    [Space(1)]
-    [Header("Cam1")]
-    public Vector3 Position1 = new Vector3(0, 3, -6);
-    public Vector3 Rotation1 = new Vector3(12, 0, 0);
-    [Space(1)]
-    [Header("Cam2")]
-    public Vector3 Position2 = new Vector3(0, 0.8f, 1.5f);
-    public Vector3 Rotation2 = new Vector3(5, 0, 0);
+    public Vector3 Ofset = new Vector3(0,3,-4);
+    public float folowSpeed = 10f;
+    public float LookAtSpeed = 10f;
 
-    void Start()
+    private void LookAtTarget()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Vector3 lookDirection = Target.position - transform.position;
+        Quaternion rot = Quaternion.LookRotation(lookDirection, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rot, LookAtSpeed * Time.deltaTime);
     }
 
-    
-    void Update()
+    private void MoveToTraget()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-            CameraPosition++;
-        if (CameraPosition > 2)
-            CameraPosition = 0;
-
-        switch (CameraPosition)
-        {
-            case 0:
-                transform.position = Target.position + Position0;
-                transform.rotation = Quaternion.Euler(Rotation0);
-                break;
-
-            case 1:
-                transform.position = Target.position + Position1;
-                transform.rotation = Quaternion.Euler(Rotation1);
-                break;
-
-            case 2:
-                transform.position = Target.position + Position2;
-                transform.rotation = Quaternion.Euler(Rotation2);
-                break;
-
-            default:
-                transform.position = Target.position + Position0;
-                transform.rotation = Quaternion.Euler(Rotation0);
-                break;
-
-
-        }
-
-
-
+        Vector3 TargetPosition = Target.position +
+                        Target.forward * Ofset.z + 
+                          Target.right * Ofset.x +
+                              Target.up * Ofset.y;
+        transform.position = Vector3.Lerp(transform.position, TargetPosition, folowSpeed * Time.deltaTime);
     }
+
+    private void FixedUpdate()
+    {
+        LookAtTarget();
+        MoveToTraget();
+    }
+
 }

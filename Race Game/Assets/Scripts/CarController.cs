@@ -19,7 +19,7 @@ public class CarController : MonoBehaviour
     private void GetInput()
     {
         HorizontalInput = Input.GetAxis("Horizontal");
-        VerticalInput = Input.GetAxis("Vertical");
+        VerticalInput = Input.GetAxisRaw("Vertical");
 
     }
 
@@ -32,8 +32,8 @@ public class CarController : MonoBehaviour
 
     private void Accelerate()
     {
-        BackL.motorTorque = HorsePower * VerticalInput;
-        BackR.motorTorque = HorsePower * VerticalInput;
+        FrontL.motorTorque = HorsePower * VerticalInput;
+        FrontR.motorTorque = HorsePower * VerticalInput;
     }
 
     private void UpdateWheelPoses()
