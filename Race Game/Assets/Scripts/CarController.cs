@@ -7,14 +7,18 @@ public class CarController : MonoBehaviour
     private float HorizontalInput;
     private float VerticalInput;
     private float SteeringAngle;
+    
 
+    [Header("Wheel Colliders")]
     public WheelCollider FrontL, FrontR;
     public WheelCollider BackL, BackR;
-
+    [Header("Wheel Transforms")]
     public Transform FrontLT, FrontRT;
     public Transform BackLT, BackRT;
-    public float HorsePower = 100f;
+    [Header("CarSettings")]
+    public float HorsePower = 3000f;
     public float SteeringClampAngle = 35f;
+    public float BrakeHorsePower = 1000;
 
     private void GetInput()
     {
@@ -34,7 +38,23 @@ public class CarController : MonoBehaviour
     {
         FrontL.motorTorque = HorsePower * VerticalInput;
         FrontR.motorTorque = HorsePower * VerticalInput;
+
     }
+
+    private void HandBreak()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            BackL.brakeTorque = BrakeHorsePower;
+            BackR.brakeTorque = BrakeHorsePower;
+        }
+        else
+        {
+            BackL.brakeTorque = 0f;
+            BackR.brakeTorque = 0f;
+        }
+    }
+
 
     private void UpdateWheelPoses()
     {
@@ -57,7 +77,7 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        HandBreak();
         GetInput();
         Steer();
         Accelerate();
