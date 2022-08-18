@@ -7,14 +7,17 @@ public class CarController : MonoBehaviour
     private float HorizontalInput;
     private float VerticalInput;
     private float SteeringAngle;
-    
 
+
+    [Space(1)]
     [Header("Wheel Colliders")]
     public WheelCollider FrontL, FrontR;
     public WheelCollider BackL, BackR;
+    [Space(1)]
     [Header("Wheel Transforms")]
     public Transform FrontLT, FrontRT;
     public Transform BackLT, BackRT;
+    [Space(1)]
     [Header("CarSettings")]
     public float HorsePower = 3000f;
     public float SteeringClampAngle = 35f;
