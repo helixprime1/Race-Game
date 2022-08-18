@@ -9,7 +9,7 @@ public class CarController : MonoBehaviour
     private float SteeringAngle;
 
 
-    [Space(1)]
+    
     [Header("Wheel Colliders")]
     public WheelCollider FrontL, FrontR;
     public WheelCollider BackL, BackR;
@@ -22,6 +22,8 @@ public class CarController : MonoBehaviour
     public float HorsePower = 3000f;
     public float SteeringClampAngle = 35f;
     public float BrakeHorsePower = 1000;
+    public Rigidbody rb;
+    
 
     private void GetInput()
     {
@@ -41,6 +43,7 @@ public class CarController : MonoBehaviour
     {
         FrontL.motorTorque = HorsePower * VerticalInput;
         FrontR.motorTorque = HorsePower * VerticalInput;
+        Debug.Log(rb.velocity.magnitude * 5);
 
     }
 
