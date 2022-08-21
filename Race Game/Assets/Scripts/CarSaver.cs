@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarSaver : MonoBehaviour
 {
-
+    public Rigidbody rb;
     public Transform Car;
     public float Cooldown = 5;
     private float time = 0f;
@@ -18,10 +18,11 @@ public class CarSaver : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
+                rb.velocity = Vector3.zero;
                 time = Cooldown + Time.time;
-                float CarRot = Car.transform.localRotation.eulerAngles.y;
-                Car.position = Car.transform.localPosition + Vector3.up;
-                Car.rotation = Quaternion.Euler(0,CarRot,0);
+                float CarRotY = Car.transform.localRotation.eulerAngles.y;
+                Car.position = Car.transform.localPosition + new Vector3(0,2,0);
+                Car.rotation = Quaternion.Euler(0,CarRotY,0);
             }
 
             

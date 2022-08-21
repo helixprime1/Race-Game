@@ -7,9 +7,9 @@ public class CarController : MonoBehaviour
     private float HorizontalInput;
     private float VerticalInput;
     private float SteeringAngle;
-
-
+    private float friction;
     
+
     [Header("Wheel Colliders")]
     public WheelCollider FrontL, FrontR;
     public WheelCollider BackL, BackR;
@@ -21,10 +21,13 @@ public class CarController : MonoBehaviour
     [Header("CarSettings")]
     public float HorsePower = 3000f;
     public float SteeringClampAngle = 35f;
-    public float BrakeHorsePower = 1000;
+    public float BrakeHorsePower = 2000;
     public Rigidbody rb;
-    
 
+    private void Awake()
+    {
+        friction = BackL.sidewaysFriction.stiffness;
+    }
     private void GetInput()
     {
         HorizontalInput = Input.GetAxis("Horizontal");
@@ -49,18 +52,32 @@ public class CarController : MonoBehaviour
 
     private void HandBreak()
     {
+        WheelFrictionCurve wfcL = BackL.sidewaysFriction;
+        WheelFrictionCurve wfcR = BackR.sidewaysFriction;
         if (Input.GetKey(KeyCode.Space))
         {
+            wfcL.stiffness = 0.5f;
+            wfcR.stiffness = 0.5f;
+            BackL.sidewaysFriction = wfcL;
+            BackR.sidewaysFriction = wfcR;
             BackL.brakeTorque = BrakeHorsePower;
             BackR.brakeTorque = BrakeHorsePower;
         }
         else
         {
+            wfcL.stiffness = 1;
+            wfcR.stiffness = 1;
+            BackL.sidewaysFriction = wfcL;
+            BackR.sidewaysFriction = wfcR;
             BackL.brakeTorque = 0f;
             BackR.brakeTorque = 0f;
         }
     }
 
+    private void WheelFrictionSetup()
+    {
+
+    }
 
     private void UpdateWheelPoses()
     {
