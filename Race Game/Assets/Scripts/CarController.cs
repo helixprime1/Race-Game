@@ -23,6 +23,7 @@ public class CarController : MonoBehaviour
     public float SteeringClampAngle = 35f;
     public float BrakeHorsePower = 2000;
     public Rigidbody rb;
+    public float Speed;
 
     private void Awake()
     {
@@ -46,7 +47,8 @@ public class CarController : MonoBehaviour
     {
         FrontL.motorTorque = HorsePower * VerticalInput;
         FrontR.motorTorque = HorsePower * VerticalInput;
-        Debug.Log(rb.velocity.magnitude * 5);
+        Speed = rb.velocity.magnitude;
+        Debug.Log(Speed);
 
     }
 
