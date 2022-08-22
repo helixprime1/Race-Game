@@ -212,8 +212,8 @@ MonoBehaviour:
     y: 0
     width: 244.8
     height: 505.6
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -249,10 +249,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 16.399994}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6c89ffff9889ffff788bffff828bffff828dffff5491ffffe0a0ffff28aaffff16b2ffff96b5ffff38fbfffff0590000005a0000e65a0000365b0000545b0000ae5b0000c85b0000dc5b0000265c0000465d0000525d000024d50000
+      m_ExpandedIDs: 38fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -528,9 +528,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 120.2602, y: 4.101225, z: 155.49121}
+    m_Target: {x: -3.0456696, y: 2.1013489, z: -41.35051}
     speed: 2
-    m_Value: {x: 120.2602, y: 4.101225, z: 155.49121}
+    m_Value: {x: -3.0456696, y: 2.1013489, z: -41.35051}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -577,13 +577,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.015065505, y: 0.9832605, z: -0.09617274, w: -0.15402924}
+    m_Target: {x: 0.061895024, y: -0.76004934, z: 0.07318975, w: 0.64275914}
     speed: 2
-    m_Value: {x: -0.0150654875, y: 0.9832593, z: -0.09617263, w: -0.15402906}
+    m_Value: {x: 0.061894964, y: -0.7600486, z: 0.07318968, w: 0.64275855}
   m_Size:
-    m_Target: 5.8161464
+    m_Target: 4.290426
     speed: 2
-    m_Value: 5.8161464
+    m_Value: 4.290426
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -676,22 +676,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Thirdparty/Ciathyza/Gridbox Prototype Materials
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\CINAR\Desktop\Race-Game\Race Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 75.80002}
-    m_SelectedIDs: c0120100
-    m_LastClickedID: 70336
-    m_ExpandedIDs: 00000000445e00005c5e0000bc12010000ca9a3b
+    scrollPos: {x: 0, y: 43.80002}
+    m_SelectedIDs: 685e0000
+    m_LastClickedID: 24168
+    m_ExpandedIDs: 00000000585e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -719,7 +719,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000445e000000ca9a3b
+    m_ExpandedIDs: 00000000585e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -797,7 +797,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 579.2
-    width: 1263.8
+    width: 1224.6
     height: 204.19998
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
