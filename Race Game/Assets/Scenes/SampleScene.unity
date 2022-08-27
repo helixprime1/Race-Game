@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a40e3a673b270943b77ac85ea45ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 1990947324836720776}
+  Target: {fileID: 543450653486680375}
   CamAngle: 0
   Ofset1: {x: 0, y: 1.5, z: -3}
   Ofset2: {x: 0, y: 2, z: -4}
@@ -3667,6 +3667,11 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 7074934858987420478, guid: b77bc05bbf882c14994c4d35c98c15bd, type: 3}
   m_PrefabInstance: {fileID: 7074934859866319110}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &543450653486680375 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7324417291143815209, guid: b77bc05bbf882c14994c4d35c98c15bd, type: 3}
+  m_PrefabInstance: {fileID: 7074934859866319110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &551925992768147733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,7 +4218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1260299594821041756
 Transform:
   m_ObjectHideFlags: 0
@@ -8133,6 +8138,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7993429832176990865, guid: b77bc05bbf882c14994c4d35c98c15bd, type: 3}
+      propertyPath: HorsePower
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993429832176990865, guid: b77bc05bbf882c14994c4d35c98c15bd, type: 3}
       propertyPath: BrakeHorsePower
       value: 2000
       objectReference: {fileID: 0}
@@ -8142,7 +8151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7993429832176990867, guid: b77bc05bbf882c14994c4d35c98c15bd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7993429832176990878, guid: b77bc05bbf882c14994c4d35c98c15bd, type: 3}
       propertyPath: rb
